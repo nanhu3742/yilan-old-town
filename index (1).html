@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2C3E35">
+  <meta name="description" content="宜蘭舊城十三章數位走讀手冊：鐵道、水路、百工、文脈與城市記憶。">
+  <title>宜蘭舊城深度走讀｜從鐵道、水路到百工的百年身世</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--paper:#F9F6F0;--ink:#2C3E35;--brick:#A84A3B;--line:#DAD5CB;--nav-height:170px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-height) + 16px)}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.95}
+    h1,h2,h3,h4{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif}button,input{font:inherit}button,a{touch-action:manipulation}button{cursor:pointer}a{color:inherit;text-decoration:none}p{margin:0 0 1em}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--brick);outline-offset:4px}[hidden]{display:none!important}
+    .container-shell{max-width:1100px;margin:auto;padding-inline:20px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--brick);font-weight:700}
+    .navbar{position:sticky;top:0;z-index:30;background:rgba(249,246,240,.98);border-bottom:1px solid var(--line);box-shadow:0 3px 20px #2c3e3507}
+    .nav-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px}.brand{font-family:serif;font-size:18px;font-weight:bold;letter-spacing:2px}.brand small{font-family:sans-serif;display:block;font-size:9px;letter-spacing:1px;font-weight:400}.nav-tools{display:flex;gap:8px;padding-block:10px}.search{min-width:0;flex:1;display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:5px;padding:7px 11px;background:#fffdf8}.search input{width:100%;min-width:0;border:0;background:transparent;font-size:13px;color:var(--ink);outline-offset:2px}.note-toggle{border:1px solid var(--brick);color:var(--brick);background:transparent;border-radius:5px;padding:7px 10px;font-size:11px;white-space:nowrap;min-height:44px}.tabs{display:flex;gap:7px;overflow-x:auto;padding-block:7px 12px;scrollbar-width:thin}.tab{flex:none;white-space:nowrap;border:1px solid var(--line);background:transparent;border-radius:100px;font-size:12px;padding:7px 13px;min-height:42px}.tab[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}.map-tab{color:var(--brick)}
+    .hero{padding-block:44px 36px;border-bottom:1px solid var(--line)}.hero h1{font-size:34px;line-height:1.5;font-weight:600;letter-spacing:2px;margin:13px 0 18px}.hero h1 span{display:block;font-size:19px;letter-spacing:1px;color:var(--brick);margin-top:12px}.hero-subtitle{font-size:16px;line-height:2;color:#45564c}.hero-intro{font-size:14px;color:#516056;line-height:2}.button{display:inline-flex;gap:22px;align-items:center;padding:11px 20px;background:var(--brick);color:white;border-radius:4px;font-size:14px;margin-top:9px}.hero-meta{display:flex;gap:15px;margin-top:22px;font-size:11px;letter-spacing:1px;color:#586158}
+    .section-heading{font-size:28px;line-height:1.6;font-weight:600;margin:8px 0 20px}.map-section{padding-block:42px}.reading-tip{background:#E9EEE7;border-left:3px solid var(--ink);padding:19px 20px;font-size:14px;margin-bottom:22px}.reading-tip h3{font-size:17px;font-weight:600;margin:0 0 8px}.reading-tip p{margin:0}.read-direction{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;align-items:center;margin-top:14px;color:var(--brick)}
+    .map-frame{width:100%;border:1px dashed #87968a;background:#E8E6DA;border-radius:9px;padding:0;overflow:hidden;display:block;text-align:center;margin-bottom:10px;color:var(--ink)}.map-placeholder{min-height:210px;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:30px 20px;background-image:linear-gradient(#2c3e3507 1px,transparent 1px),linear-gradient(90deg,#2c3e3507 1px,transparent 1px);background-size:30px 30px}.map-placeholder strong{font-family:serif;font-size:24px;letter-spacing:2px}.map-placeholder span{font-size:13px;margin-top:12px}.map-image{display:block;width:100%;height:auto}.map-caption{font-size:12px;color:#596358;margin-bottom:22px}.layer-card{border:1px solid var(--line);background:#FFFDF8;border-radius:8px;padding:20px}.layer-card .layer-no{font:italic 24px Georgia,serif;color:var(--brick)}.layer-card h3{font-size:19px;font-weight:600;margin:8px 0}.layer-card p{font-size:14px;margin:0;line-height:2}
+    .chapters-section{padding-block:30px 50px}.chapter-index{display:grid;grid-template-columns:1fr;gap:8px;padding:16px;background:#EDEFE5;border-radius:8px;margin-bottom:22px}.chapter-index a{font-size:13px;padding:7px 9px;border-radius:4px}.chapter-index a:hover{background:#DDE4D8;color:var(--brick)}.results{font-size:13px;color:#536151;margin-bottom:20px}.chapter{background:#FFFDF9;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:30px;scroll-margin-top:calc(var(--nav-height) + 16px);box-shadow:0 6px 20px #2c3e3505}.chapter-head{padding:23px 20px 21px}.chapter-no{font:italic 20px Georgia,serif;color:var(--brick)}.tag{font-size:10px;border:1px solid #C9D3C6;border-radius:100px;background:#EAF0E6;color:var(--ink);padding:4px 9px;margin-left:12px;vertical-align:middle}.chapter-head h2{font-size:23px;line-height:1.65;font-weight:600;margin:10px 0 8px}.subtitle{font-size:14px;color:#576253;margin:0}
+    .photo-slot{position:relative;display:flex;gap:22px;align-items:center;min-height:160px;padding:26px 24px;background:linear-gradient(120deg,#E9DFD0,#DFE5D8);overflow:hidden;border-block:1px solid #DAD5CB}.photo-slot:after{content:'';position:absolute;right:-20px;top:-50px;width:230px;height:230px;border:1px solid #2c3e351c;border-radius:50%;pointer-events:none}.photo-no{font:italic 65px Georgia,serif;color:#A84A3B55}.photo-slot>div{position:relative;z-index:1}.photo-slot>div>span{font-size:11px;letter-spacing:2px;color:#6A685B}.photo-slot p{font-family:serif;font-size:17px;margin:8px 0 0}.site-photo{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+    .chapter-body{padding:23px 20px}.chapter-body h3{font-size:18px;line-height:1.7;font-weight:600;margin:0 0 12px}.chapter-body p,.chapter-body dd{font-size:16px;line-height:2.1;overflow-wrap:anywhere}.timeline-section{margin-top:26px}.timeline{list-style:none;margin:0 0 26px;padding:0 0 0 20px;border-left:2px solid #D0D9C9}.timeline li{position:relative;padding:0 0 22px 4px}.timeline li:last-child{padding-bottom:0}.timeline li:before{content:'';position:absolute;width:9px;height:9px;border-radius:50%;background:var(--brick);left:-25.5px;top:11px;box-shadow:0 0 0 4px #FFFDF9}.date-badge{display:inline-block;background:#F2E5DD;color:#813A2E;border:1px solid #E4C8B9;padding:3px 11px;border-radius:100px;font-size:12px;font-weight:600;max-width:100%;white-space:normal}.timeline li p{font-size:14px;line-height:2;margin:10px 0 0}.observation{background:#F2F1DC;border:1px solid #DEDEC2;border-radius:8px;padding:20px 17px;margin-top:25px}.observation h3{color:#354834}.observation dl{margin:0}.observation dt{font-size:15px;font-weight:700;margin:17px 0 7px}.observation dt:first-child{margin-top:0}.observation dd{font-size:15px;margin:0 0 16px}.observation dd:last-child{margin-bottom:0}
+    .research-note{border:1px solid #E1CFC3;border-radius:7px;margin-top:22px;background:#FBF1E9}.research-note summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;list-style:none;color:#873C30;font-size:15px;font-weight:600;padding:15px 17px;min-height:52px}.research-note summary::-webkit-details-marker{display:none}.research-note summary span{transition:transform .2s}.research-note[open] summary span{transform:rotate(45deg)}.research-note p{padding:0 17px 18px;margin:0;font-size:14px;line-height:2.1}.back-top{display:inline-block;margin-top:19px;font-size:12px;color:#6C6153;text-decoration:underline;text-underline-offset:4px}.empty{padding:35px 20px;border:1px dashed var(--line);border-radius:8px;text-align:center}.empty button{border:0;background:var(--brick);color:white;border-radius:4px;padding:10px 18px;margin-top:12px}.footer{border-top:1px solid var(--line);padding-block:28px 35px;font-size:12px;color:#4F5C51}.footer p{margin:0;line-height:2.2}.skip-link{position:fixed;top:-100px;left:12px;background:var(--ink);color:white;padding:12px;z-index:100}.skip-link:focus{top:12px}
+    dialog{border:0;border-radius:12px;padding:0;width:calc(100% - 24px);max-width:1100px;max-height:90vh;background:var(--paper);color:var(--ink)}dialog::backdrop{background:#18271fd9}.dialog-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:2}.dialog-toolbar h2{font-size:17px;font-weight:600;margin:0}.dialog-close{font-size:14px;border:1px solid var(--line);border-radius:5px;padding:7px 12px;min-height:44px;background:transparent}.zoom-tools{padding:12px 18px;font-size:13px;display:flex;gap:12px;align-items:center}.zoom-tools input{flex:1;min-width:0}.zoom-area{overflow:auto;max-height:65vh;padding:16px}.zoom-area img{max-width:none;height:auto;display:block}.zoom-area .map-placeholder{min-height:340px}
+    @media(min-width:640px){.container-shell{padding-inline:30px}.hero{padding-block:65px 48px}.hero h1{font-size:48px}.hero h1 span{font-size:25px}.hero-intro{max-width:850px}.nav-tools{max-width:640px}.chapter-index{grid-template-columns:1fr 1fr}.chapter-head,.chapter-body{padding:28px 30px}.chapter-head h2{font-size:28px}.photo-slot{min-height:190px;padding-inline:32px}.observation{padding:23px}.layer-card{padding:25px}.map-placeholder{min-height:300px}.hero-subtitle{max-width:860px}}
+    @media(min-width:1024px){.chapter-index{grid-template-columns:repeat(3,1fr)}.hero h1{font-size:55px}.layer-card p{font-size:15px}.nav-top{padding-top:15px}.nav-tools{padding-block:10px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.research-note summary span{transition:none}}
+    @media print{.navbar,.skip-link,.button,.chapter-index,.back-top,.photo-slot,.map-frame,.map-caption,.results,.empty,dialog{display:none!important}body{background:white;color:black}.container-shell{max-width:none;padding:0}.hero{padding-top:0}.hero h1{font-size:25pt}.hero h1 span{font-size:16pt}.hero-subtitle,.hero-intro{font-size:11pt}.chapter{box-shadow:none;border-radius:0;break-inside:auto}.chapter-head h2{font-size:18pt}.chapter-head,.chapter-body{padding:15px}.chapter-body p,.chapter-body dd{font-size:11pt}.chapter[hidden]{display:block!important}.research-note>p{display:block!important}.observation,.research-note,.timeline li{break-inside:avoid}.layer-card{padding:12px}.footer{font-size:9pt}}
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#chapters">跳至十三章導覽</a>
+<header class="navbar" id="navbar">
+  <div class="container-shell">
+    <div class="nav-top"><a class="brand" href="#top">宜蘭舊城深度走讀<small>YILAN OLD TOWN · 城市記憶數位手冊</small></a><span class="eyebrow hidden sm:block">街巷有記憶 · 腳步有回聲</span></div>
+    <div class="nav-tools"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜尋地點、人物、工藝、年代…" aria-label="搜尋十三章全文"></label><button id="toggle-notes" class="note-toggle" type="button" aria-pressed="false">展開全部考證註記</button></div>
+    <nav class="tabs" aria-label="讀圖與四大主題分區">
+      <a class="tab map-tab" href="#map-guide">讀圖入城 · 1929</a>
+      <button class="tab" type="button" data-theme="all" aria-pressed="true">全部十三章</button>
+      <button class="tab" type="button" data-theme="0" aria-pressed="false">吞吐與摩登</button>
+      <button class="tab" type="button" data-theme="1" aria-pressed="false">肚腹與手路</button>
+      <button class="tab" type="button" data-theme="2" aria-pressed="false">權力與文脈</button>
+      <button class="tab" type="button" data-theme="3" aria-pressed="false">城界信仰與記憶</button>
+    </nav>
+  </div>
+</header>
+<main id="top" class="container-shell">
+  <section class="hero">
+    <p class="eyebrow">從站前出發，走進蘭城</p>
+    <h1>宜蘭舊城深度走讀<span>從鐵道、水路到百工的百年身世</span></h1>
+    <p class="hero-subtitle">十三個章節、五段空間軌跡，慢下腳步，在磚縫、廟埕與街角讀懂蘭陽平原的城市記憶。</p>
+    <p class="hero-intro">走讀一座舊城，除了看建築是否古老，也要問這個位置為何一直被使用、它與周圍街道如何相連。讓我們帶著老地圖與嚴謹的史料，從站前出發，一步步走進宜蘭的日常與歷史。</p>
+    <a class="button" href="#chapters">打開十三章走讀手冊 <span aria-hidden="true">↓</span></a>
+    <div class="hero-meta"><span>13 個章節</span><span>4 大查閱主題</span><span>觀察 · 閱讀 · 考證</span></div>
+  </section>
+  <section id="map-guide" class="map-section" aria-labelledby="map-title">
+    <p class="eyebrow">READ THE OLD MAP / 讀圖入城</p>
+    <h2 id="map-title" class="section-heading">1929《宜蘭街職業明細圖》讀圖指南</h2>
+    <div class="reading-tip"><h3>導讀小撇步</h3><p>先定位地圖最右側的「宜蘭驛（火車站）」，再往左（城內）看：靠近車站的是商業娛樂區（宜蘭座、旅館、運輸公司），再往左是舊城中心（市場、公所、醫院、孔廟、大武廟），最左側（城外西北與西南）則是監獄、牧場與農地。</p><div class="read-direction"><span>右側：宜蘭驛</span><span aria-hidden="true">←</span><span>商業娛樂區</span><span aria-hidden="true">←</span><span>舊城中心</span><span aria-hidden="true">←</span><span>左側：城外</span></div></div>
+    <button type="button" id="open-map" class="map-frame" aria-haspopup="dialog" aria-controls="map-dialog" aria-label="放大檢視1929年老地圖展示框">
+      <!-- 老地圖圖片插槽：在以下 img 加入 src="1929宜蘭街職業明細圖.jpg"；載入成功後會自動顯示圖片並隱藏預留色塊。 -->
+      <img id="old-map" class="map-image" alt="1929年宜蘭街職業明細圖" hidden>
+      <span id="map-placeholder" class="map-placeholder"><strong>1929 · 宜蘭街</strong><span>老地圖圖片展示框</span><span>點擊放大檢視 ↗</span></span>
+    </button>
+    <p class="map-caption">此處預留原圖展示位置；置入老地圖後，可點擊放大並調整檢視倍率。</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <article class="layer-card"><span class="layer-no">01</span><h3>頂部地標</h3><p>宜蘭郡役所（行政中心）、宜蘭神社（今員山公園）。</p></article>
+      <article class="layer-card"><span class="layer-no">02</span><h3>清代城門方位</h3><p>乾門（西北門／舊城北路）、坤門（西南門／舊城南路與中山路交會）、巽門（東南門／康樂路一帶）。</p></article>
+      <article class="layer-card"><span class="layer-no">03</span><h3>公共與醫療</h3><p>宜蘭街役場、郵便局、市內小賣市場（南北館前身）、宜蘭醫院（今陽明交大附醫新民院區）、監獄分監（今新月廣場門廳）。</p></article>
+      <article class="layer-card"><span class="layer-no">04</span><h3>特色商號</h3><p>大東／丸井旅館、煙酒賣捌所、米穀商、蘭陽運輸公司。</p></article>
+    </div>
+  </section>
+  <section id="chapters" class="chapters-section" aria-labelledby="chapters-title">
+    <p class="eyebrow">THIRTEEN CHAPTERS / 街角的觀察與考證</p>
+    <h2 id="chapters-title" class="section-heading">十三章走讀導覽</h2>
+    <nav class="chapter-index" aria-label="十三章快速索引">
+      <a href="#ch1">01 蘭陽吞吐的咽喉</a>
+<a href="#ch2">02 後巷裡的摩登與覺醒</a>
+<a href="#ch3">03 舊城的庶民肚腹與職人手路</a>
+<a href="#ch4">04 權力、生死與無聲的守衛</a>
+<a href="#ch5">05 文風、渡海與飲水思源</a>
+<a href="#ch6">06 書院文脈與地方教化</a>
+<a href="#ch7">07 西門水運與商業街市</a>
+<a href="#ch8">08 城隍街的工藝與西後街的糕餅</a>
+<a href="#ch9">09 武營街的打鐵、眷舍與宗族生活</a>
+<a href="#ch10">10 南門的官署、官舍與歷史空間</a>
+<a href="#ch11">11 刺竹城界與舊城水路</a>
+<a href="#ch12">12 五穀廟與東嶽廟的信仰生活</a>
+<a href="#ch13">13 中山公園的舞姿與碑刻</a>
+    </nav>
+    <p id="results" class="results" aria-live="polite">顯示全部13章</p>
+    <div id="empty" class="empty" hidden><p>沒有符合的章節。可試試「水路」、「昭應宮」或「1947」。</p><button id="reset-search" type="button">清除搜尋與分區</button></div>
+    <article id="ch1" class="chapter" data-theme="0" aria-labelledby="title1">
+  <header class="chapter-head"><span class="chapter-no">Ch.01</span><span class="tag">吞吐與摩登</span><h2 id="title1">蘭陽吞吐的咽喉</h2><p class="subtitle">鐵道、紅磚屋與行口的運輸歲月</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第1章現場照片預留位置"><span class="photo-no">01</span><div><span>現場影像預留</span><p>宜蘭火車站 · 紅磚屋 · 行口倉庫</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>把宜蘭火車站（客貨運輸）、紅磚屋（米穀檢查）與北側舊倉庫群（存放轉運）連起來，才能看懂一袋宜蘭米如何從田間走向外地市場，以及水泥、過磷酸肥料、鹽魚等外地物資如何進入宜蘭日常。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1919.03.24</span><p>宜蘭至蘇澳段通車，宜蘭驛啟用（木造唐破風站房）。</p></li><li><span class="date-badge">1924.12.01</span><p>草嶺、三貂嶺等隧道貫通，八堵至蘇澳全線營運。</p></li><li><span class="date-badge">1930（或戰後初期）</span><p>舊糧食局宜蘭辦公廳（紅磚屋）作為殖產局米穀檢查所宜蘭出張所。</p></li><li><span class="date-badge">1962</span><p>歐珀颱風受災後車站改建為鋼筋混凝土建築（1996整建外觀、1997後站啟用）。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>看紅磚屋</dt><dd>留意拱形入口與矩形窗戶，觀察外牆「英式順丁砌」（長面與短面磚交錯排列）與四面斜坡的「寄棟頂」，順著屋簷想一想雨水會往哪裡流。</dd><dt>看行口倉庫</dt><dd>觀察入口位置、建物與鐵路及道路的距離，想像農民用牛車或「犁仔卡」送米檢查後，搬運工如何在倉庫與車廂間抬放重物。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>太平山木材主要經羅東森林鐵路集中至羅東林場，解說時須與宜蘭行口區分；紅磚屋興建年代有1930年（蘭博文獻）與約1946年（文化局稱具75年歷史）兩種記載，保留差異待考。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch2" class="chapter" data-theme="0" aria-labelledby="title2">
+  <header class="chapter-head"><span class="chapter-no">Ch.02</span><span class="tag">吞吐與摩登</span><h2 id="title2">後巷裡的摩登與覺醒</h2><p class="subtitle">賣捌所、康樂路與宜蘭座</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第2章現場照片預留位置"><span class="photo-no">02</span><div><span>現場影像預留</span><p>煙草賣捌所 · 康樂路 · 宜蘭座</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>貨物進城後，在康樂路展開配銷與娛樂生活。38號的「煙草賣捌營業所」展現專賣制度下官署指定與私人經營的結合；65號的「宜蘭座（宜蘭戲院）」則是地方仕紳集資的新式劇場，從歌仔戲、默片辯士到有聲電影，更在1947年成為二二八事件青年大會的集會現場。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1933.08.24</span><p>黃天賜等人集資成立宜蘭劇場株式會社，「宜蘭座」開幕。</p></li><li><span class="date-badge">1937–1938</span><p>小島仁三郎興建康樂路日式二層木屋先作住家，1940.07.01將煙草賣捌營業所遷入（戰後改為水利宿舍，2003指定古蹟）。</p></li><li><span class="date-badge">1947.03.04–03.05</span><p>3月4日宜蘭座召開青年大會提出四項要求；3月5日於開化樓成立二二八事件處理委員會宜蘭分會。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>對比兩種建築尺度</dt><dd>在賣捌所指認水平重疊排水的「雨淋板」、編竹夾泥牆（檜木與杉木構件），對照舊平面圖分辨左前事務所、居住區與後方已改建的倉庫；走到宜蘭座則退後觀察鋼筋混凝土二層立面的「洗石子」牆面、帶狀幾何裝飾與兩側斜紋窗格翼塔（Art Deco風格）。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>賣捌所須區分「房屋興建（1937–38）」與「營業所遷入（1940）」；宜蘭戲院歇業時間有1987年10月與1990年兩種記載，二二八集會與隔日開化樓處委會亦須分開指認。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch3" class="chapter" data-theme="1" aria-labelledby="title3">
+  <header class="chapter-head"><span class="chapter-no">Ch.03</span><span class="tag">肚腹與手路</span><h2 id="title3">舊城的庶民肚腹與職人手路</h2><p class="subtitle">南北館市場、昇平街與榻榻米工藝</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第3章現場照片預留位置"><span class="photo-no">03</span><div><span>現場影像預留</span><p>南北館市場 · 青草街 · 信標商行</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>公設市場比宜蘭火車站更早啟用！從早期「工」字形市場因道路拓寬分為南北兩館，走進北館魚攤（MARU圳魚號連通大湖、壯圍與大溪漁港）、青草街、百貨毛線行、菜籽種苗行與三源臘味行，再看南館大樓的垂直商業疊加與手作肝花，最後到昇平街「信標商行」看稻草與藺草如何縫製成榻榻米。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1912.01.24</span><p>「宜蘭街食料品小賣市場」啟用（早於1919鐵路通車）。</p></li><li><span class="date-badge">1936</span><p>林木源創立三源行（早於1939北側新市場開業）。</p></li><li><span class="date-badge">1937–1939</span><p>申請貸款、新市場落成並於1939.03.31營業。</p></li><li><span class="date-badge">1980年前後</span><p>南館改建為結合地下生鮮、蘭陽百貨、戲院與溜冰場的複合大樓。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>看種苗與臘味</dt><dd>分辨「菜籽（需播種）」與「菜苗（已育苗）」的分工；觀察膽肝、鴨賞、臘肉及因應夏秋淡季開發的肉紙、金棗肉乾。</dd><dt>看信標商行榻榻米</dt><dd>觀察底層壓製的稻草墊、表面直接接觸人體的藺草蓆面，以及四邊包邊布如何用針線縫製固定。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>北館與南館並非單純「北熟食、南生鮮」；青草街首家店照片解說記為1952年；南館改建有1979與1980兩說；信標商行確認三代傳承（賴柳標至賴忠良），不妄稱百年老店。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch4" class="chapter" data-theme="2" aria-labelledby="title4">
+  <header class="chapter-head"><span class="chapter-no">Ch.04</span><span class="tag">權力與文脈</span><h2 id="title4">權力、生死與無聲的守衛</h2><p class="subtitle">噶瑪蘭廳署、宜蘭大病院與石敢當</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第4章現場照片預留位置"><span class="photo-no">04</span><div><span>現場影像預留</span><p>新民院區 · 院區老樹 · 石敢當</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>今日陽明交大附醫新民院區，重疊了清代噶瑪蘭廳署與日治宜蘭大病院的歷史。戰後郭章垣院長接掌醫院，面對醫護食宿困境與1946年霍亂防疫，卻在1947年二二八事件中擔任處委會主委而遭軍隊逮捕遇害。院區外的文化景觀老樹群與巷弄裡的「石敢當」，則無聲守衛著城市的生死與平安。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1812設廳／1813建署</span><p>首任通判翟淦於城內東街興建六座廳署。</p></li><li><span class="date-badge">1895–1898</span><p>支廳內設西式診療所，逐步改制為宜蘭醫院（1906行政廳署南遷，原址全作醫療空間；1914設看護婦講習所）。</p></li><li><span class="date-badge">1947.03</span><p>郭章垣擔任二二八處委會宜蘭分會主委，3月中旬被捕，於頭城慶元宮附近遇害，留下「生離祖國，死歸祖國，死生天命，無想無念」十六字遺書（遺腹女郭勝華日後整理母親郭林汾回憶）。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>看院區老樹群</dt><dd>觀察老樟樹、大王椰子、榕樹與通道的關係（1950年代空拍已見，原夾於醫療建築與宿舍間，勿直接稱清代官署遺留）。</dd><dt>看兩處石敢當</dt><dd>比對新民路100巷（砂岩獨立碑、旁有香座燭台，「石」字多一點相傳祈求石頭多一點、水少一點）與東後街74號巷內（嵌入民宅牆體，稱石將軍）。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>須將郭章垣任職地（宜蘭醫院）與遇害地（頭城慶元宮）分開標示；另一受難者鄭新福畢業於早稻田政經系（同年12月去世），勿誤植為醫師或代理院長。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch5" class="chapter" data-theme="2" aria-labelledby="title5">
+  <header class="chapter-head"><span class="chapter-no">Ch.05</span><span class="tag">權力與文脈</span><h2 id="title5">文風、渡海與飲水思源</h2><p class="subtitle">楊士芳進士第與昭應宮</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第5章現場照片預留位置"><span class="photo-no">05</span><div><span>現場影像預留</span><p>聖後街進士第 · 昭應宮</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>從務農輟學到1868年考取「開蘭唯一進士」，楊士芳因父喪未赴浙江任知縣，留在宜蘭倡建孔廟、主持仰山書院。走訪聖後街進士第（留存公廳，家族公媽龕已捐蘭博典藏），再轉往早於設廳的媽祖廟「昭應宮」，看壓艙石、泉州白石龍柱與後殿供奉的「開蘭三大老」。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1808（嘉慶13年）</span><p>宜蘭街居民合建昭應宮（坐西朝東，早於1812設廳）。</p></li><li><span class="date-badge">1834（道光14年）</span><p>昭應宮於對街重建，改坐東朝西，原址改作戲臺。</p></li><li><span class="date-badge">1868（同治7年）</span><p>楊士芳登殿試三甲第118名進士；1874重修城南擺厘故宅並立旗杆座；1885完成城內聖後街進士第。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>分清楊士芳三處空間</dt><dd>城南擺厘故宅（有旗杆座）、城內聖後街進士第（三合院留存正身公廳，書齋舊址在今力新路16巷民宅間）、楊士芳紀念林園（原台電宿舍改建的近代公共空間）。</dd><dt>細讀昭應宮工藝</dt><dd>低頭看三川殿台階的「壓艙石」磨耗與接縫；看正殿由兩段泉州白石接成的龍柱；看天井「人字形地磚」與正殿中央斜鋪青斗石「御路」（走兩側階梯勿踩踏）；上後殿二樓龍邊辨認穿清代官服的「開蘭三大老（楊廷理、翟淦、陳蒸）」木雕像。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>昭應宮改向「科甲聯登」屬地方相傳，須與楊士芳苦讀經歷並讀；切勿使用「全臺唯一不面海媽祖廟」的未核實說法；分清楊廷理（設治官員）與楊士芳（進士）兩位不同年代人物。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch6" class="chapter" data-theme="2" aria-labelledby="title6">
+  <header class="chapter-head"><span class="chapter-no">Ch.06</span><span class="tag">權力與文脈</span><h2 id="title6">書院文脈與地方教化</h2><p class="subtitle">新民堂、文昌宮、仰山書院與碧霞宮</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第6章現場照片預留位置"><span class="photo-no">06</span><div><span>現場影像預留</span><p>新民堂 · 文昌宮 · 碧霞宮</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>把文人的足跡從個人擴展到教化組織。舉人李望洋與士紳於清末創立「新民堂」扶鸞勸善；「文昌宮」罕見並列文殿與武殿，東廂曾為「仰山書院」位址，周邊兼有考棚與水路集貨廟埕；1895年政權更替後，楊士芳、李望洋與陳祖疇等人開設勸善局、籌建主祀岳飛的「碧霞宮」，透過宣講與樂施社慈善延續地方文脈。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1812–1845</span><p>1812楊廷理創設仰山書院；1818通判高大鏞倡建文昌宮；1822設考棚；1825呂志恒以文昌宮東廂為書院並建門樓；1845朱材哲改建為文武二殿格局。</p></li><li><span class="date-badge">1890（光緒16年）</span><p>李望洋等人組輔仁會創建新民堂（早於日治）。</p></li><li><span class="date-badge">1896–1899</span><p>陳祖疇家中立坎興鸞堂、楊士芳等設勸善局；1897買地、1899碧霞宮正殿落成（1905公學校分教室遷入文昌宮，1918–1923女子公學校借用）。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>看文昌宮</dt><dd>辨認文昌帝君與關聖帝君的「滿漢文神位」、文殿奉祀的宋代「五夫子（周敦頤、張載、二程、朱熹）」，以及武殿後方的石砌基礎與斗子磚殘牆遺跡。</dd><dt>看碧霞宮</dt><dd>找正殿「代天宣化」、「忠孝節義」與「勸善局」匾額落款；對讀廟埕「建廟啟文碑（2002年立、落款1895年）」與日籍判官木村篤於1899年（己亥年）捐贈的木香爐。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>《文帝真經寶懺》雕版移轉碧霞宮有臺史博典藏印頁為證，但勿直接誇大為「整所仰山書院秘密遷入碧霞宮」；木香爐的日官捐贈顯示當時人際互動的多面向，不宜單一簡化。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch7" class="chapter" data-theme="0" aria-labelledby="title7">
+  <header class="chapter-head"><span class="chapter-no">Ch.07</span><span class="tag">吞吐與摩登</span><h2 id="title7">西門水運與商業街市</h2><p class="subtitle">西門渡口、西門溝與西關廟</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第7章現場照片預留位置"><span class="photo-no">07</span><div><span>現場影像預留</span><p>慶和橋 · 西門路 · 西關廟 · 慈雲宮</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>在鐵路之前，水路是舊城的命脈。上游員山大湖底的米穀、木料、薪炭，搭「駁仔」沿宜蘭河而下，在「堰空頭（慶和橋下排水門附近）」換乘約6公尺長的「鴨母船」轉進狹窄的西門溝（今西門路），於西關廟與慈雲宮附近卸貨，再經兌安門（西門）進入文昌路街市與水郊行舖。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1852–1890</span><p>1852西關廟於現址對面建小廟；1889慈雲宮（大眾爺廟）創建；1890李盛周捐地將西關廟遷至現址（原面向宜蘭河）。</p></li><li><span class="date-badge">1892／1924</span><p>1892洪水造成宜蘭河改道；1924鐵路全通與公路發展，西門轉運逐漸衰退（戰後辛仔罕河段仍曾用鴨母船運甘蔗）。</p></li><li><span class="date-badge">1980年代／約1996</span><p>1980年代西關廟重建並改為背向河（坐西朝東）；約1996西門溝加蓋成為西門路。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>在慶和橋與西門路指認水路</dt><dd>對照舊圖，手指沿「宜蘭河 → 堰空頭換鴨母船 → 西門溝（西門路） → 西關廟／慈雲宮卸貨 → 兌安門入文昌路」畫出貨物換手路線。</dd><dt>看廟宇細節</dt><dd>看西關廟「老帝君」沿革與今日坐向；看慈雲宮1891年「寶筏渡人」匾額。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>「釘船仔海」記錄了西門造船與桐油灰補縫手藝；海船無法直泊西關廟前，須經河運轉駁；關帝信仰與航運商道信用可並讀，但勿無據宣稱商人在廟內立誓或由廟宇裁決糾紛。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch8" class="chapter" data-theme="1" aria-labelledby="title8">
+  <header class="chapter-head"><span class="chapter-no">Ch.08</span><span class="tag">肚腹與手路</span><h2 id="title8">城隍街的工藝與西後街的糕餅</h2><p class="subtitle">糊紙、蓪草花、刺繡、燒畫磚、錫藝與糕餅</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第8章現場照片預留位置"><span class="photo-no">08</span><div><span>現場影像預留</span><p>城隍街 · 光復路 · 西後街</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>材料進城後，在匠師手中變成禮俗器物。城隍街與周邊聚集了三代傳承的「烏肉紙藝店」、手工製香「天理堂」、以蓪草樹肉削紙捏花的「花玉號」、結合手繪與窯燒的「景陽花磚」、李弘仁的「錫藝與金屬工坊」、光復路「金官繡莊」的立體神衣刺繡，以及西後街「薛榮興糕餅店」與木雕粿印、糖龜模的歲時禮俗。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1888／1945／1949</span><p>1888薛合記創立（第二代增做糕餅改名薛榮興）；1945陳金官於宜蘭開設金官繡補店；1949天理堂香舖創立後遷城隍街。</p></li><li><span class="date-badge">1985</span><p>黃德河創立花玉號（蓪草紙花家學傳自母親黃江查某與潘牛，2012登錄文資）。</p></li><li><span class="date-badge">2010–2015</span><p>「蘭城百工（匠師博物館）」計畫推進，促成跨工藝招牌合作（如陳世強設計、李弘仁鍛造金官繡莊招牌；林烈輝製作花玉號銅花招牌；顏三元彩繪烏肉紙藝外牆；薛榮興以鴛鴦餅模焊接鐵招牌）。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>看景陽花磚與彩繪</dt><dd>理解白瓷磚「背面編號 → 手繪 → 入窯燒製（顏金鐘用柴窯、顏文伯改電窯） → 泥作鋪貼」工序，觀察圖案如何跨過磚縫（可對照昭應宮1993顏文伯門神彩繪）。</dd><dt>分辨四種木模</dt><dd>比較蔡榮興木雕的「粿印（壓粿糰翻拍）」、「糕印（舀粉壓實）」、「餅印（刻紋較深以應付烘烤膨脹，先壓模再烤）」與「糖龜模（底板加四片背殼組合、注入糖液）」。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>棺材街與禮儀行業是戰後才集中至城隍街一帶，勿一概推回清代；收涎（收瀾）口酥餅與紅龜粿屬民俗通例，勿推論單一餅店包辦全城所有禮俗。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch9" class="chapter" data-theme="1" aria-labelledby="title9">
+  <header class="chapter-head"><span class="chapter-no">Ch.09</span><span class="tag">肚腹與手路</span><h2 id="title9">武營街的打鐵、眷舍與宗族生活</h2><p class="subtitle">打鐵街、化龍一村與林氏家廟追遠堂</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第9章現場照片預留位置"><span class="photo-no">09</span><div><span>現場影像預留</span><p>上進興 · 化龍一村 · 追遠堂</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>舊城西南側疊合了三種生活：武營街「上進興」打鐵店鍛造平口柴刀與劈篾刀，回應農林與竹器加工需求；71巷內的「化龍一村」從清代武營、日治練兵場與衛戍醫院，轉為戰後聯勤204廠（通訊與電池廠）的木造與磚造眷舍，修復後化身書房與藝文空間；南興街「林氏家廟追遠堂」則展現漳州七縣林姓族眾聚資建祠、管理田產（興德會）與興學（捐贈宜中校地）的宗族力量。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1835（道光15年）</span><p>林登等人集合漳州七縣林姓族眾創建追遠堂（1906出售前側土地予臺灣銀行；1923–1924重建前殿與兩廊；2021指定縣定古蹟）。</p></li><li><span class="date-badge">1949–1966</span><p>1949聯勤204廠由天津遷宜蘭接收日治房舍（1957新廠遷礁溪）；1964–1966依年資、考績與眷口數自費增建分發19戶磚造眷舍；2022兒少書房啟用。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>看打鐵與農具</dt><dd>觀察武營街18號上進興的爐灶與空間，比較「平口柴刀」與「劈篾刀（剖竹分篾用）」的刃部厚薄與裝柄方式。</dd><dt>讀化龍一村新舊材料</dt><dd>在修復後的眷舍尋找「日式木屋、戰後增建磚牆、保留下來的水泥瓦，以及當代介入的鋼構與玻璃」交界處。</dd><dt>看追遠堂木雕與構造</dt><dd>欣賞前殿螭虎團爐、花鳥透雕，對比1923年重建的前殿木構與1980年代以鋼筋混凝土仿大木作的正殿。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>打鐵街雖鄰近清代武營，但主要生產農具與山林刀具（戰後才集中五、六家租屋營業），勿憑地名推定為軍隊打造兵器；林姓興德會捐贈金六結旱田作宜中校地，但因戰事延後建校，須將「捐地」與「建校舍」分開說明。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch10" class="chapter" data-theme="2" aria-labelledby="title10">
+  <header class="chapter-head"><span class="chapter-no">Ch.10</span><span class="tag">權力與文脈</span><h2 id="title10">南門的官署、官舍與歷史空間</h2><p class="subtitle">舊城南路、舊監獄、新月廣場與西鄉德政碑</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第10章現場照片預留位置"><span class="photo-no">10</span><div><span>現場影像預留</span><p>設治紀念館 · 宜蘭文學館 · 舊監獄 · 西門橋</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>1900年代宜蘭行政中心跨出南門護城河外，形成宜蘭廳署（後為郡役所、縣政府）、首長官邸（今設治紀念館）、農校校長宿舍（今宜蘭文學館）、主秘公館與宜蘭監獄的官署聚落。1990年代縣府與監獄遷出後，因一棵老樟樹啟動保存，與新月廣場並存；河畔西門橋頭的「西鄉廳憲德政碑」，則記錄了廳長西鄉菊次郎任內的治水與殖民治理歷史。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1896</span><p>宜蘭監獄創設（1992遷往三星，留存和洋式木構門廳與1984改建為RC的八角崗哨）。</p></li><li><span class="date-badge">1900–1923</span><p>1900–1901西鄉菊次郎推動修建城外西側堤防；1905德政碑刻成，1923加基座立於西門橋頭。</p></li><li><span class="date-badge">1906–2008</span><p>1906南門外宜蘭廳署與官舍群竣工（1920改宜蘭郡役所；1950設縣政府，1974建四層大樓，1997.01.28遷和平路縣政中心；同年12月設治紀念館啟用，2008新月廣場開幕）。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>辨認兩棵地標老樹與石頭城</dt><dd>區分設治紀念館庭園內的「老樟樹」（促成南門保存的起點，並看枯山水庭園）與新月廣場舊城南路入口的「老榕樹」（對照日治郡役所門前圓環老照片）；沿路尋找黑色頁岩「人字形砌築」的官舍圍牆（石頭城）。</dd><dt>看舊監獄門廳與德政碑</dt><dd>觀察監獄門廳「木板拼接仿石材裝飾、洗石子牆基、窗戶三角形楣飾」；到西門橋讀德政碑落款與基座。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>設治紀念館是「首長官邸」而非廳署辦公本體；文學館房舍追溯至1906年官舍，1926年農校創立後才撥作校長宿舍；德政碑戰後曾被納入民宅牆面，介紹時不添油加醋未核實情節，並同時點出碑文「版圖新附之民」的殖民治理立場。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch11" class="chapter" data-theme="3" aria-labelledby="title11">
+  <header class="chapter-head"><span class="chapter-no">Ch.11</span><span class="tag">城界信仰與記憶</span><h2 id="title11">刺竹城界與舊城水路</h2><p class="subtitle">九芎、刺竹、城外水圳與八千代川</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第11章現場照片預留位置"><span class="photo-no">11</span><div><span>現場影像預留</span><p>舊城四路 · 主秘公館 · 光復國小 · 中山公園</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>沿著彎曲的舊城東、西、南、北路，辨認清代「近圓形」的城界。建城前五圍已有聚落與水圳；1810年楊廷理種九芎（大樹移植存活不到三成），1812–1813年翟淦由漳、泉、粵三籍結首分段輸工，補植基部多銳刺的「刺竹」並引水入城濠。日治拆城後水圳仍供灌溉與洗衣戲水（稱八千代川），1970–80年代加蓋為暗渠，近年則透過光復國小「維管束」與中山公園平行新水道重新親水。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1810–1868</span><p>1810楊廷理規畫五圍城池、栽竹種九芎；1812冬–1813秋翟淦整備城防、補插刺竹、設四門吊橋（1819高大鏞建城樓；1868丁承禧重修留震平、兌安、離順、坎興四門名，合稱「平安順興」）。</p></li><li><span class="date-badge">1904–1913</span><p>市區改正，城門與城垣分期拆除轉為道路。</p></li><li><span class="date-badge">1977–2017</span><p>1977–1984城外水道分段加蓋為道路；2010光復國小泰山口圳維管束空間、2016–2017中山公園新護城河綠廊帶完工。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>植物與城防觀察</dt><dd>觀察「九芎」光滑剝落的茶褐色樹皮，以及「刺竹」基部特化彎曲的銳刺與密生竹叢，理解「內有九芎、外有刺竹、下有土圍與濠河」的立體防線。</dd><dt>水路對照</dt><dd>在舊主秘公館前看地面1898年〈宜蘭城略圖（溝渠）〉，再到中山公園指出「新水道平行於地下舊暗渠」的設計，理解城外水圳是由西向東引泰山口圳匯流（東段稱流北溪），而非靜止繞圈的死水。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>《噶瑪蘭廳志》明載九芎存活不逾三成但後續仍補栽小九芎，故非「完全沒種成」；拆城與水道加蓋皆為分期分段進行；使用「八千代川」地方稱呼，不採「九千代川」。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch12" class="chapter" data-theme="3" aria-labelledby="title12">
+  <header class="chapter-head"><span class="chapter-no">Ch.12</span><span class="tag">城界信仰與記憶</span><h2 id="title12">五穀廟與東嶽廟的信仰生活</h2><p class="subtitle">先農壇、鞭春牛、神將與廟會</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第12章現場照片預留位置"><span class="photo-no">12</span><div><span>現場影像預留</span><p>五穀廟 · 東嶽廟</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>走出南門城外，進入農業祀典與幽冥司法的信仰空間。神農路的「五穀廟」源於清代官方祭祀的先農壇與五穀神祠，凝聚了米商與中藥商神明會，並在元宵延續摸春牛、鞭春牛與火化「復職」的勸農習俗；中山路的「東嶽廟」源於南郊風雲雷雨山川神壇，保存福州軟身東嶽大帝、手寫藥籤簿、名匠彩繪剪黏，以及在農曆三月廿八日暗訪、日巡出陣的「大神尪（神將）」社團文化。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1812／1858</span><p>1812通判翟淦於南門外奉建先農壇；1858（咸豐8年）通判富謙按田園勸捐重建為坐東面西，立〈重建先農壇碑記〉。</p></li><li><span class="date-badge">1878（光緒4年）</span><p>知縣馬桂芳促成東嶽廟興建（1987完成今日擴建廟貌）。</p></li><li><span class="date-badge">2017–2023</span><p>五穀廟採取「新舊廟並存」，舊廟於2017解體記錄、2022於南側重組修復、2023.11.29落成設「神農文化常設展」。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>看五穀廟碑匾與木構</dt><dd>讀富謙1858年碑記「製從其樸、料置其堅」的營造精神，找「制器壽人（1812）」、「農醫之祖（1858）」、「粒食開先（1859）」古匾與修復後的傳統木構。</dd><dt>看東嶽廟工藝與神將</dt><dd>尋訪屋頂許忠信剪黏、蔡榮華壁垛雕刻、康介珪書法與景陽顏文伯大門彩繪；認識鎮殿保存不再出巡的「老七爺、老八爺」與信義會等神將社團的頭、架、衣、盔。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>清代立春官方擊「土牛（高四尺長八尺）」的禮制，須與今日五穀廟元宵鞭「紙紮春牛」分開說明；五穀廟舊廟是「拆解重組修復」而非軌道平移；宜蘭大拜拜由東嶽廟與城隍廟輪流舉辦，暗訪（誕辰前夕）與日巡（誕辰當日）各有儀節。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+
+<article id="ch13" class="chapter" data-theme="3" aria-labelledby="title13">
+  <header class="chapter-head"><span class="chapter-no">Ch.13</span><span class="tag">城界信仰與記憶</span><h2 id="title13">中山公園的舞姿與碑刻</h2><p class="subtitle">羅曼菲、旋的冥想、獻馘碑與城市記憶</p></header>
+  <!-- 可替換現場老照片：將以下色塊換成 <img src="照片路徑" alt="具體描述這張現場照片" loading="lazy" class="site-photo">。 -->
+  <div class="photo-slot" role="img" aria-label="第13章現場照片預留位置"><span class="photo-no">13</span><div><span>現場影像預留</span><p>中山公園 · 旋的冥想 · 獻馘碑</p></div></div>
+  <div class="chapter-body"><section><h3>核心敘事</h3><p>走讀最終站回到1909年設立的宜蘭公園（今中山公園）。在演藝廳水池畔，林健成創作的青銅雕塑〈旋的冥想〉，將宜蘭女兒羅曼菲演出《輓歌》的旋轉舞姿留在家鄉；公園另一側的「獻馘碑」，則同時刻下了撫慰街庄隘卒亡靈的哀思，以及日治廳長中田直溫推進隘勇線、壓制南澳泰雅族部落的殖民治理敘事。</p></section>
+  <section class="timeline-section"><h3>關鍵時間軸</h3><ol class="timeline"><li><span class="date-badge">1909.03–1911</span><p>林拱辰撰、島田正幹書〈獻馘碑〉碑文落款（原擬名首塚碑設於金六結，1910.12申請改設宜蘭公園，1911.01–05興建碑體；2004指定古蹟）。</p></li><li><span class="date-badge">1989／2006</span><p>1989林懷民為羅曼菲編作獨舞《輓歌》；2006.03.24羅曼菲辭世（2019年起宜蘭市定3月24日為羅曼菲日）。</p></li><li><span class="date-badge">2023.11</span><p>公園設置呂秉承設計之〈蘭城古今〉與〈九芎年代〉裝置藝術，呼應九芎城歷史。</p></li></ol></section>
+  <section class="observation"><h3>🔍 現場觀察指南</h3><dl><dt>繞行〈旋的冥想〉</dt><dd>觀察青銅長裙上的蝕洞、穿透的日光與水池倒影，思考時間中的舞蹈如何轉化為空間中的雕塑。</dd><dt>多視角讀〈獻馘碑〉</dt><dd>先看台基、四角突出基座、圓柱碑身與圓頂四段形制；讀碑文時，將「慰靈、表彰理蕃功績」的立碑者立場，與南澳泰雅族守護土地、gaga規範、面對清軍（1874、1890）與日治隘勇線電網壓迫及集團移住的部落史並置思考。</dd></dl></section>
+  <details class="research-note"><summary>📌 考證備忘<span aria-hidden="true">＋</span></summary><p>「馘（讀音同國）」古義為割左耳獻功，碑文所指為交出顱骨；碑石材質有大南澳大理石與花崗岩兩說，統稱石碑；〈旋的冥想〉雕塑作者為林健成，《輓歌》編舞者為林懷民，切勿混淆；園內另有約1943年建的舊日軍通信中心遺跡可一併指認。</p></details>
+  <a class="back-top" href="#chapters">回到章節索引 ↑</a></div>
+</article>
+  </section>
+</main>
+<footer class="footer"><div class="container-shell"><p>宜蘭舊城深度走讀數位策展｜史料考證自國家文化記憶庫、蘭陽博物館電子報、《噶瑪蘭廳志》與在地社區調查。</p></div></footer>
+<dialog id="map-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-toolbar"><h2 id="dialog-title">1929《宜蘭街職業明細圖》</h2><button id="close-map" class="dialog-close" type="button" autofocus>關閉 ✕</button></div>
+  <label id="zoom-tools" class="zoom-tools" hidden>檢視倍率 <input id="map-zoom" type="range" min="100" max="300" value="100" step="25"><output id="zoom-value">100%</output></label>
+  <div id="zoom-area" class="zoom-area"></div>
+</dialog>
+<script>
+(() => {
+  'use strict';
+  const cards = [...document.querySelectorAll('.chapter')];
+  const notes = [...document.querySelectorAll('.research-note')];
+  const search = document.getElementById('search');
+  const themeButtons = [...document.querySelectorAll('button.tab[data-theme]')];
+  const noteButton = document.getElementById('toggle-notes');
+  const normalize = value => value.normalize('NFKC').toLocaleLowerCase().replace(/\s+/g, '');
+  const texts = cards.map(card => normalize(card.textContent));
+  let currentTheme = 'all';
+
+  function filterCards() {
+    const keyword = normalize(search.value);
+    let count = 0;
+    cards.forEach((card, index) => {
+      const matches = (currentTheme === 'all' || card.dataset.theme === currentTheme) && texts[index].includes(keyword);
+      card.hidden = !matches;
+      if (matches) count++;
+    });
+    themeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.theme === currentTheme)));
+    document.getElementById('results').textContent = `顯示 ${count} / 13 章`;
+    document.getElementById('empty').hidden = count !== 0;
+  }
+  search.addEventListener('input', filterCards);
+  themeButtons.forEach(button => button.addEventListener('click', () => {
+    currentTheme = button.dataset.theme;
+    filterCards();
+    document.getElementById('chapters').scrollIntoView({block: 'start'});
+  }));
+  document.getElementById('reset-search').addEventListener('click', () => {
+    search.value = '';
+    currentTheme = 'all';
+    filterCards();
+    search.focus();
+  });
+
+  function syncNoteButton() {
+    const allOpen = notes.every(note => note.open);
+    noteButton.textContent = allOpen ? '收合全部考證註記' : '展開全部考證註記';
+    noteButton.setAttribute('aria-pressed', String(allOpen));
+  }
+  noteButton.addEventListener('click', () => {
+    const open = !notes.every(note => note.open);
+    notes.forEach(note => note.open = open);
+    syncNoteButton();
+  });
+  notes.forEach(note => note.addEventListener('toggle', syncNoteButton));
+
+  function revealHash() {
+    if (!/^#ch\d+$/.test(location.hash)) return;
+    const target = document.getElementById(location.hash.slice(1));
+    if (!target) return;
+    if (target.hidden) {
+      currentTheme = 'all';
+      search.value = '';
+      filterCards();
+    }
+    requestAnimationFrame(() => target.scrollIntoView({block: 'start'}));
+  }
+  window.addEventListener('hashchange', revealHash);
+  document.querySelector('.chapter-index').addEventListener('click', event => {
+    const link = event.target.closest('a');
+    if (link && link.hash === location.hash) revealHash();
+  });
+  const navbar = document.getElementById('navbar');
+  const setNavHeight = () => document.documentElement.style.setProperty('--nav-height', `${navbar.offsetHeight}px`);
+  if ('ResizeObserver' in window) new ResizeObserver(setNavHeight).observe(navbar);
+  else window.addEventListener('resize', setNavHeight);
+  setNavHeight();
+  revealHash();
+
+  const map = document.getElementById('old-map');
+  const placeholder = document.getElementById('map-placeholder');
+  function showMap() {
+    const loaded = Boolean(map.getAttribute('src')) && map.complete && map.naturalWidth > 0;
+    map.hidden = !loaded;
+    placeholder.hidden = loaded;
+  }
+  map.addEventListener('load', showMap);
+  map.addEventListener('error', showMap);
+  showMap();
+  const dialog = document.getElementById('map-dialog');
+  const opener = document.getElementById('open-map');
+  const zoom = document.getElementById('map-zoom');
+  const area = document.getElementById('zoom-area');
+  opener.addEventListener('click', () => {
+    area.replaceChildren();
+    zoom.value = 100;
+    document.getElementById('zoom-value').value = '100%';
+    const hasImage = !map.hidden;
+    document.getElementById('zoom-tools').hidden = !hasImage;
+    if (hasImage) {
+      const image = map.cloneNode();
+      image.removeAttribute('id');
+      image.hidden = false;
+      image.style.width = '100%';
+      area.append(image);
+    } else {
+      const message = document.createElement('div');
+      message.className = 'map-placeholder';
+      const title = document.createElement('strong');
+      title.textContent = '1929 · 宜蘭街';
+      const text = document.createElement('span');
+      text.textContent = '老地圖原圖尚未置入；此處為放大展示預留位置。';
+      message.append(title, text);
+      area.append(message);
+    }
+    dialog.showModal();
+  });
+  zoom.addEventListener('input', () => {
+    const image = area.querySelector('img');
+    if (image) image.style.width = `${zoom.value}%`;
+    document.getElementById('zoom-value').value = `${zoom.value}%`;
+  });
+  document.getElementById('close-map').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    const box = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) dialog.close();
+  });
+  dialog.addEventListener('close', () => opener.focus());
+
+  let printState = null;
+  window.addEventListener('beforeprint', () => {
+    if (printState) return;
+    printState = {hidden: cards.map(card => card.hidden), open: notes.map(note => note.open)};
+    cards.forEach(card => card.hidden = false);
+    notes.forEach(note => note.open = true);
+  });
+  window.addEventListener('afterprint', () => {
+    if (!printState) return;
+    cards.forEach((card, index) => card.hidden = printState.hidden[index]);
+    notes.forEach((note, index) => note.open = printState.open[index]);
+    printState = null;
+    syncNoteButton();
+  });
+})();
+</script>
+</body>
+</html>
